@@ -23,20 +23,24 @@ class FlashCardWidget extends StatelessWidget {
 
   Widget createCardFlipAnimation(
       Widget widget, Animation<double> animation, bool cardFlipped) {
-    final rotateAnim = Tween(begin: pi, end: 0.0).animate(animation);
-    return AnimatedBuilder(
-      animation: rotateAnim,
-      child: widget,
-      builder: (context, widget) {
-        final isUnder = (ValueKey(cardFlipped) != widget!.key);
-        final value =
-            isUnder ? min(rotateAnim.value, pi / 2) : rotateAnim.value;
-        return Transform(
-          transform: Matrix4.rotationY(value),
-          child: widget,
-          alignment: Alignment.center,
-        );
-      },
-    );
+    if (!cardFlipped) {
+      return FadeTransition(opacity: animation, child: widget);
+    } else {
+      final rotateAnim = Tween(begin: pi, end: 0.0).animate(animation);
+      return AnimatedBuilder(
+        animation: rotateAnim,
+        child: widget,
+        builder: (context, widget) {
+          final isUnder = (ValueKey(cardFlipped) != widget!.key);
+          final value =
+              isUnder ? min(rotateAnim.value, pi / 2) : rotateAnim.value;
+          return Transform(
+            transform: Matrix4.rotationY(value),
+            child: widget,
+            alignment: Alignment.center,
+          );
+        },
+      );
+    }
   }
 }

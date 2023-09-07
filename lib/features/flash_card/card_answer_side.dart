@@ -9,6 +9,15 @@ class CardAnswerSide extends StatelessWidget {
   Widget build(BuildContext context) {
     final flashCardViewModel = context.watch<FlashCardViewModel>();
 
+    List<Widget> content = [];
+    if (flashCardViewModel.cardFlipped) {
+      content = [
+        FlashCardWord(text: flashCardViewModel.currentFlashCard.answer),
+        FlashCardDescription(
+            text: flashCardViewModel.currentFlashCard.answerDescription)
+      ];
+    }
+
     return FractionallySizedBox(
       widthFactor: .8,
       heightFactor: .3,
@@ -18,11 +27,7 @@ class CardAnswerSide extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              FlashCardWord(text: flashCardViewModel.currentFlashCard.answer),
-              FlashCardDescription(
-                  text: flashCardViewModel.currentFlashCard.answerDescription)
-            ],
+            children: content,
           ),
         ]),
       ),
