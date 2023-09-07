@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: ChangeNotifierProvider(
+          create: (context) => FlashCardViewModel(), child: const MyHomePage()),
     );
   }
 }
@@ -29,11 +30,36 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => FlashCardViewModel(),
-      child: Scaffold(
-        body: Center(child: FlashCardWidget()),
-      ),
+    final flashCardViewModel = context.watch<FlashCardViewModel>();
+    return Scaffold(
+      body: Center(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Flexible(child: FlashCardWidget()),
+          if (flashCardViewModel.cardFlipped)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.greenAccent,
+                  ),
+                  onPressed: () {flashCardViewModel.nextCard();},
+                  child: const Text('Znałem'),
+                ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent,
+                  ),
+                  onPressed: () {flashCardViewModel.nextCard();},
+                  child: const Text('Nie znałem'),
+                ),
+              ],
+            )
+        ],
+      )),
     );
   }
 }
