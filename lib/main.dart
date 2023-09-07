@@ -1,5 +1,8 @@
-import 'package:flashcardsflutter/flash_card.dart';
+import 'package:flashcardsflutter/features/flash_card/flash_card_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'features/flash_card/flash_card_view_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,20 +19,21 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter fiszki'),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(child: FlashCard()),
+    return ChangeNotifierProvider(
+      create: (context) => FlashCardViewModel(),
+      child: Scaffold(
+        body: Center(child: FlashCardWidget()),
+      ),
     );
   }
 }
