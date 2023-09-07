@@ -12,9 +12,9 @@ class CardAnswerSide extends StatelessWidget {
     List<Widget> content = [];
     if (flashCardViewModel.cardFlipped) {
       content = [
-        FlashCardWord(text: flashCardViewModel.currentFlashCard.answer),
+        FlashCardWord(text: flashCardViewModel.currentFlashCard?.answer ?? ""),
         FlashCardDescription(
-            text: flashCardViewModel.currentFlashCard.answerDescription)
+            text: flashCardViewModel.currentFlashCard?.answerDescription ?? "")
       ];
     }
 

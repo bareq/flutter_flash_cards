@@ -19,9 +19,12 @@ class CardQuestionSide extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FlashCardWord(text: flashCardViewModel.currentFlashCard.question),
+              FlashCardWord(
+                  text: flashCardViewModel.currentFlashCard?.question ?? ""),
               FlashCardDescription(
-                  text: flashCardViewModel.currentFlashCard.questionDescription)
+                  text: flashCardViewModel
+                          .currentFlashCard?.questionDescription ??
+                      "")
             ],
           ),
           Expanded(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'features/flash_card/flash_card_view_model.dart';
+import 'features/flash_card/repository/mocked/mocked_flash_cards_repository.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ChangeNotifierProvider(
-          create: (context) => FlashCardViewModel(), child: const MyHomePage()),
+          create: (context) => FlashCardViewModel(
+              flashCardsRepository: MockedFlashCardsRepository()),
+          child: const MyHomePage()),
     );
   }
 }
@@ -45,7 +48,9 @@ class MyHomePage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.greenAccent,
                   ),
-                  onPressed: () {flashCardViewModel.nextCard();},
+                  onPressed: () {
+                    flashCardViewModel.nextCard();
+                  },
                   child: const Text('Znałem'),
                 ),
                 const SizedBox(width: 16),
@@ -53,7 +58,9 @@ class MyHomePage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.redAccent,
                   ),
-                  onPressed: () {flashCardViewModel.nextCard();},
+                  onPressed: () {
+                    flashCardViewModel.nextCard();
+                  },
                   child: const Text('Nie znałem'),
                 ),
               ],

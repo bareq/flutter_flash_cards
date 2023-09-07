@@ -1,23 +1,16 @@
 import 'package:flashcardsflutter/features/flash_card/model/flash_card.dart';
+import 'package:flashcardsflutter/features/flash_card/repository/flash_cards_repository.dart';
 import 'package:flutter/foundation.dart';
 
 class FlashCardViewModel extends ChangeNotifier {
-  final flashCards = <FlashCard>[
-    FlashCard("Question title 1", "Question description 1", "Answer 1",
-        "Answer description 1"),
-    FlashCard("Question title 2", "Question description 2", "Answer 2",
-        "Answer description 2"),
-    FlashCard("Question title 3", "Question description 3", "Answer 3",
-        "Answer description 3"),
-    FlashCard("Question title 4", "Question description 4", "Answer 4",
-        "Answer description 4"),
-  ];
-  late FlashCard currentFlashCard;
-  late bool cardFlipped;
+  late FlashCardsRepository flashCardsRepository;
 
-  FlashCardViewModel() {
-    currentFlashCard = flashCards.first;
-    cardFlipped = false;
+  List<FlashCard> flashCards = [];
+  FlashCard? currentFlashCard;
+  bool cardFlipped = false;
+
+  FlashCardViewModel({required this.flashCardsRepository}) {
+    getFlashCards();
   }
 
   void flipCard() {
@@ -26,11 +19,19 @@ class FlashCardViewModel extends ChangeNotifier {
   }
 
   void nextCard() {
-    final index = flashCards.indexOf(currentFlashCard);
+    if (currentFlashCard == null) {
+      return;
+    }
+    final index = flashCards.indexOf(currentFlashCard!);
     if (index < flashCards.length - 1) {
       currentFlashCard = flashCards[index + 1];
       cardFlipped = false;
       notifyListeners();
     }
+  }
+
+  void getFlashCards() async {
+    flashCards = await flashCardsRepository.fetchFlashCards();
+    currentFlashCard = flashCards.first;
   }
 }
