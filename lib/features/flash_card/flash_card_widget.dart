@@ -6,6 +6,9 @@ import 'package:flashcardsflutter/features/flash_card/flash_card_view_model.dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+const cardWidthPercentage = .8;
+const cardHeightPercentage = .3;
+
 class FlashCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
