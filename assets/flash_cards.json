@@ -1,0 +1,212 @@
+[
+  {
+    "id": 0,
+    "question": "kot",
+    "questionDescription": "mam dwa kocury",
+    "answer": "a cat",
+    "answerDescription": "I have two male cats"
+  },
+  {
+    "id": 1,
+    "question": "samochód",
+    "questionDescription": "mój samochód jest czerwony",
+    "answer": "a car",
+    "answerDescription": "My car is red"
+  },
+  {
+    "id": 2,
+    "question": "dom",
+    "questionDescription": "mieszkam w dużym domu",
+    "answer": "a house",
+    "answerDescription": "I live in a big house"
+  },
+  {
+    "id": 3,
+    "question": "książka",
+    "questionDescription": "lubię czytać książki",
+    "answer": "a book",
+    "answerDescription": "I enjoy reading books"
+  },
+  {
+    "id": 4,
+    "question": "telefon",
+    "questionDescription": "mój telefon jest nowy",
+    "answer": "a phone",
+    "answerDescription": "My phone is new"
+  },
+  {
+    "id": 5,
+    "question": "drzewo",
+    "questionDescription": "widzę piękne drzewo",
+    "answer": "a tree",
+    "answerDescription": "I see a beautiful tree"
+  },
+  {
+    "id": 6,
+    "question": "kwiat",
+    "questionDescription": "dostałem piękny kwiat od przyjaciela",
+    "answer": "a flower",
+    "answerDescription": "I received a beautiful flower from a friend"
+  },
+  {
+    "id": 7,
+    "question": "woda",
+    "questionDescription": "piję dużo wody każdego dnia",
+    "answer": "water",
+    "answerDescription": "I drink a lot of water every day"
+  },
+  {
+    "id": 8,
+    "question": "księżyc",
+    "questionDescription": "widzę księżyc na nocnym niebie",
+    "answer": "the moon",
+    "answerDescription": "I see the moon in the night sky"
+  },
+  {
+    "id": 9,
+    "question": "ryba",
+    "questionDescription": "lubię jeść świeżą rybę",
+    "answer": "a fish",
+    "answerDescription": "I like to eat fresh fish"
+  },
+  {
+    "id": 10,
+    "question": "słońce",
+    "questionDescription": "słońce świeci jasno na niebie",
+    "answer": "the sun",
+    "answerDescription": "The sun is shining brightly in the sky"
+  },
+  {
+    "id": 11,
+    "question": "telewizor",
+    "questionDescription": "mój telewizor jest duży i płaski",
+    "answer": "a television",
+    "answerDescription": "My television is big and flat"
+  },
+  {
+    "id": 12,
+    "question": "buty",
+    "questionDescription": "mam czerwone buty",
+    "answer": "shoes",
+    "answerDescription": "I have red shoes"
+  },
+  {
+    "id": 13,
+    "question": "książka kucharska",
+    "questionDescription": "moja babcia ma starą książkę kucharską",
+    "answer": "a cookbook",
+    "answerDescription": "My grandmother has an old cookbook"
+  },
+  {
+    "id": 14,
+    "question": "piłka nożna",
+    "questionDescription": "gram w piłkę nożną w soboty",
+    "answer": "soccer",
+    "answerDescription": "I play soccer on Saturdays"
+  },
+  {
+    "id": 15,
+    "question": "laptop",
+    "questionDescription": "mój laptop jest bardzo szybki",
+    "answer": "a laptop",
+    "answerDescription": "My laptop is very fast"
+  },
+  {
+    "id": 16,
+    "question": "kawa",
+    "questionDescription": "lubię pić kawę rano",
+    "answer": "coffee",
+    "answerDescription": "I like to drink coffee in the morning"
+  },
+  {
+    "id": 17,
+    "question": "motocykl",
+    "questionDescription": "mój brat ma czerwony motocykl",
+    "answer": "a motorcycle",
+    "answerDescription": "My brother has a red motorcycle"
+  },
+  {
+    "id": 18,
+    "question": "telefon komórkowy",
+    "questionDescription": "moja siostra zgubiła swój telefon komórkowy",
+    "answer": "a mobile phone",
+    "answerDescription": "My sister lost her mobile phone"
+  },
+  {
+    "id": 19,
+    "question": "pizza",
+    "questionDescription": "pizza to moje ulubione danie",
+    "answer": "pizza",
+    "answerDescription": "Pizza is my favorite dish"
+  },
+  {
+    "id": 20,
+    "question": "samolot",
+    "questionDescription": "lubię podróżować samolotem",
+    "answer": "an airplane",
+    "answerDescription": "I enjoy traveling by airplane"
+  },
+  {
+    "id": 21,
+    "question": "książka",
+    "questionDescription": "moja ulubiona książka to 'Harry Potter'",
+    "answer": "a book",
+    "answerDescription": "My favorite book is 'Harry Potter'"
+  },
+  {
+    "id": 22,
+    "question": "rower",
+    "questionDescription": "jeżdżę na rowerze każdego dnia",
+    "answer": "a bicycle",
+    "answerDescription": "I ride a bicycle every day"
+  },
+  {
+    "id": 23,
+    "question": "ser",
+    "questionDescription": "lubię ser na kanapkach",
+    "answer": "cheese",
+    "answerDescription": "I like cheese on sandwiches"
+  },
+  {
+    "id": 24,
+    "question": "telewizja",
+    "questionDescription": "oglądam telewizję wieczorami",
+    "answer": "television",
+    "answerDescription": "I watch television in the evenings"
+  },
+  {
+    "id": 25,
+    "question": "kwiaty",
+    "questionDescription": "kupiłem piękne kwiaty dla mojej dziewczyny",
+    "answer": "flowers",
+    "answerDescription": "I bought beautiful flowers for my girlfriend"
+  },
+  {
+    "id": 26,
+    "question": "mleko",
+    "questionDescription": "piję mleko na śniadanie",
+    "answer": "milk",
+    "answerDescription": "I drink milk for breakfast"
+  },
+  {
+    "id": 27,
+    "question": "kurtka",
+    "questionDescription": "mam czerwoną kurtkę na zimę",
+    "answer": "a jacket",
+    "answerDescription": "I have a red jacket for winter"
+  },
+  {
+    "id": 28,
+    "question": "sport",
+    "questionDescription": "lubię uprawiać różne sporty",
+    "answer": "sports",
+    "answerDescription": "I like to play various sports"
+  },
+  {
+    "id": 29,
+    "question": "zegarek",
+    "questionDescription": "mój zegarek jest srebrny",
+    "answer": "a watch",
+    "answerDescription": "My watch is silver"
+  }
+]

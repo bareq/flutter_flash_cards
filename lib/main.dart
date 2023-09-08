@@ -1,9 +1,9 @@
 import 'package:flashcardsflutter/features/flash_card/flash_card_widget.dart';
+import 'package:flashcardsflutter/features/flash_card/repository/local_file/local_file_flash_cards_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'features/flash_card/flash_card_view_model.dart';
-import 'features/flash_card/repository/mocked/mocked_flash_cards_repository.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
           create: (context) => FlashCardViewModel(
-              flashCardsRepository: MockedFlashCardsRepository()),
+              flashCardsRepository: LocalFileFlashCardsRepository()),
           child: const MyHomePage()),
     );
   }
