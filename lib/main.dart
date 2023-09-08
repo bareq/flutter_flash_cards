@@ -1,11 +1,15 @@
+import 'package:flashcardsflutter/di/di_configuration.dart';
+import 'package:flashcardsflutter/features/flash_card/di/flash_card_module.dart';
 import 'package:flashcardsflutter/features/flash_card/widget/flash_card_widget.dart';
-import 'package:flashcardsflutter/features/flash_card/repository/local_file/local_file_flash_cards_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
+import 'features/flash_card/repository/flash_cards_repository.dart';
 import 'features/flash_card/view_model/flash_card_view_model.dart';
 
 void main() {
+  DIConfiguration(modulesList: [FlashCardModule()]).configure();
   runApp(const MyApp());
 }
 
@@ -14,6 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final getIt = GetIt.instance;
     return MaterialApp(
       title: 'Flutter fiszki',
       theme: ThemeData(
@@ -22,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
       home: ChangeNotifierProvider(
           create: (context) => FlashCardViewModel(
-              flashCardsRepository: LocalFileFlashCardsRepository()),
+              flashCardsRepository: getIt<FlashCardsRepository>()),
           child: const MyHomePage()),
     );
   }
