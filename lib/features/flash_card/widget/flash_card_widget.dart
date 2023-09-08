@@ -1,8 +1,8 @@
 import 'dart:math';
 
+import 'package:flashcardsflutter/features/flash_card/view_model/flash_card_view_model.dart';
 import 'package:flashcardsflutter/features/flash_card/widget/answer_side/card_answer_side.dart';
 import 'package:flashcardsflutter/features/flash_card/widget/question_side/card_question_side.dart';
-import 'package:flashcardsflutter/features/flash_card/view_model/flash_card_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +10,8 @@ const cardWidthPercentage = .8;
 const cardHeightPercentage = .3;
 
 class FlashCardWidget extends StatelessWidget {
+  const FlashCardWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     final flashCardViewModel = context.watch<FlashCardViewModel>();
@@ -17,10 +19,10 @@ class FlashCardWidget extends StatelessWidget {
     return AnimatedSwitcher(
       transitionBuilder: (widget, animation) => createCardFlipAnimation(
           widget, animation, flashCardViewModel.cardFlipped),
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       child: flashCardViewModel.cardFlipped
-          ? CardAnswerSide(key: ValueKey(false))
-          : CardQuestionSide(key: ValueKey(true)),
+          ? const CardAnswerSide(key: ValueKey(false))
+          : const CardQuestionSide(key: ValueKey(true)),
     );
   }
 
@@ -39,8 +41,8 @@ class FlashCardWidget extends StatelessWidget {
               isUnder ? min(rotateAnim.value, pi / 2) : rotateAnim.value;
           return Transform(
             transform: Matrix4.rotationY(value),
-            child: widget,
             alignment: Alignment.center,
+            child: widget,
           );
         },
       );

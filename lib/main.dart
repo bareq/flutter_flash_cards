@@ -44,7 +44,7 @@ class MyHomePage extends StatelessWidget {
           child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Flexible(child: FlashCardWidget()),
+          const Flexible(child: FlashCardWidget()),
           if (flashCardViewModel.cardFlipped)
             AnswerButtons(flashCardViewModel: flashCardViewModel)
         ],

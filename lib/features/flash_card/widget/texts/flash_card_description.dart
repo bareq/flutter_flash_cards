@@ -12,7 +12,8 @@ class FlashCardDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-      child: Text(text, style: TextStyle(fontSize: 16, color: Colors.white)),
+      child:
+          Text(text, style: const TextStyle(fontSize: 16, color: Colors.white)),
     );
   }
 }

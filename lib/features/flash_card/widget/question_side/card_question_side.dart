@@ -31,7 +31,7 @@ class CardQuestionSide extends StatelessWidget {
                       "")
             ],
           ),
-          Expanded(
+          const Expanded(
             child: Row(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -46,6 +46,8 @@ class CardQuestionSide extends StatelessWidget {
 }
 
 class FlipCardButton extends StatelessWidget {
+  const FlipCardButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     final flashCardViewModel = context.watch<FlashCardViewModel>();
@@ -53,10 +55,10 @@ class FlipCardButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: IconButton(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         color: Colors.white,
         iconSize: 32,
-        icon: Icon(Icons.loop),
+        icon: const Icon(Icons.loop),
         onPressed: () {
           flashCardViewModel.flipCard();
         },
