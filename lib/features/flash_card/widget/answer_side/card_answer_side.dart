@@ -1,10 +1,10 @@
-import 'package:flashcardsflutter/features/flash_card/flash_card_view_model.dart';
-import 'package:flashcardsflutter/features/flash_card/flash_card_widget.dart';
+import 'package:flashcardsflutter/features/flash_card/view_model/flash_card_view_model.dart';
+import 'package:flashcardsflutter/features/flash_card/widget/flash_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'flash_card_description.dart';
-import 'flash_card_word.dart';
+import '../texts/flash_card_description.dart';
+import '../texts/flash_card_word.dart';
 
 class CardAnswerSide extends StatelessWidget {
   const CardAnswerSide({super.key});

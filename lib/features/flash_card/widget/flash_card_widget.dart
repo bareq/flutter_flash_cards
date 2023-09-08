@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:flashcardsflutter/features/flash_card/card_answer_side.dart';
-import 'package:flashcardsflutter/features/flash_card/card_question_side.dart';
-import 'package:flashcardsflutter/features/flash_card/flash_card_view_model.dart';
+import 'package:flashcardsflutter/features/flash_card/widget/answer_side/card_answer_side.dart';
+import 'package:flashcardsflutter/features/flash_card/widget/question_side/card_question_side.dart';
+import 'package:flashcardsflutter/features/flash_card/view_model/flash_card_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

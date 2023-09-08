@@ -1,9 +1,9 @@
-import 'package:flashcardsflutter/features/flash_card/flash_card_widget.dart';
+import 'package:flashcardsflutter/features/flash_card/widget/flash_card_widget.dart';
 import 'package:flashcardsflutter/features/flash_card/repository/local_file/local_file_flash_cards_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'features/flash_card/flash_card_view_model.dart';
+import 'features/flash_card/view_model/flash_card_view_model.dart';
 
 void main() {
   runApp(const MyApp());
