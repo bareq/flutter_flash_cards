@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 class MainMenu extends StatelessWidget {
   const MainMenu({super.key});
 
+  final menuItems = const ["Nowe słówka", "Powtórka nieznanych"];
+
   @override
   Widget build(BuildContext context) {
     final mainMenuViewModel = context.watch<MainMenuViewModel>();
@@ -13,7 +15,7 @@ class MainMenu extends StatelessWidget {
         itemCount: 2,
         itemBuilder: (context, index) {
           return ListTile(
-            title: Text('Menu item $index'),
+            title: Text(menuItems[index]),
             onTap: () {
               mainMenuViewModel.changeMenuItem(index);
               Navigator.pop(context);
