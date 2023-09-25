@@ -1,5 +1,7 @@
 import '../model/flash_card.dart';
 
 abstract class FlashCardsRepository {
-  Future<List<FlashCard>> fetchFlashCards();
+  void fetchFlashCards();
+
+  Stream<List<FlashCard>> getFlashCardsStream();
 }

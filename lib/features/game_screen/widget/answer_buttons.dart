@@ -20,7 +20,7 @@ class AnswerButtons extends StatelessWidget {
             backgroundColor: Colors.greenAccent,
           ),
           onPressed: () {
-            flashCardViewModel.nextCard();
+            flashCardViewModel.wordKnownClicked();
           },
           child: const Text('Znałem'),
         ),
@@ -30,7 +30,7 @@ class AnswerButtons extends StatelessWidget {
             backgroundColor: Colors.redAccent,
           ),
           onPressed: () {
-            flashCardViewModel.nextCard();
+            flashCardViewModel.wordUnknownClicked();
           },
           child: const Text('Nie znałem'),
         ),

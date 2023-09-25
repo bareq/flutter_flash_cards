@@ -24,7 +24,7 @@ class LocalFileFlashCardDto {
   Map<String, dynamic> toJson() => _$LocalFileFlashCardDtoToJson(this);
 
   FlashCard toDomain() {
-    return FlashCard(question ?? "", questionDescription ?? "", answer ?? "",
-        answerDescription ?? "");
+    return FlashCard(id ?? -1, question ?? "", questionDescription ?? "",
+        answer ?? "", answerDescription ?? "");
   }
 }
