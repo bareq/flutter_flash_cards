@@ -20,7 +20,7 @@ class LocalFileFlashCardsRepository extends FlashCardsRepository {
   }
 
   @override
-  void fetchFlashCards() async {
+  Future<void> fetchFlashCards() async {
     final flashCards = await _localFileFlashCardsDataSource.getFlashCards();
     _flashCardsStreamController.add(flashCards);
   }

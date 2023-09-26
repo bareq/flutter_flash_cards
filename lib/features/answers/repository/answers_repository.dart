@@ -1,7 +1,7 @@
 import 'package:flashcardsflutter/features/answers/model/answer.dart';
 
 abstract class AnswersRepository {
-  void fetchAnswers();
+  Future<void> fetchAnswers();
 
   Stream<List<Answer>> getAnswersStream();
 

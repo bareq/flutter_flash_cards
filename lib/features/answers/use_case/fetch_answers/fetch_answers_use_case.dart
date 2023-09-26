@@ -7,6 +7,6 @@ class FetchAnswersUseCase {
       : _answersRepository = answersRepository;
 
   void execute() async {
-    _answersRepository.fetchAnswers();
+    await _answersRepository.fetchAnswers();
   }
 }

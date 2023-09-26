@@ -10,15 +10,18 @@ class GetCurrentFlashCardService {
     if (flashCards.isEmpty) {
       return null;
     }
-    if (answers.isEmpty) {
-      return flashCards.first;
-    }
     switch (gameMode.type) {
       case GameType.newWords:
+        if (answers.isEmpty) {
+          return flashCards.first;
+        }
         return flashCards
             .where((flashCard) => answers.isNotAnswered(flashCard.id))
             .firstOrNull;
       case GameType.unknownWords:
+        if (answers.isEmpty) {
+          return null;
+        }
         return flashCards
             .where((flashCard) => answers.isUnknown(flashCard.id))
             .firstOrNull;

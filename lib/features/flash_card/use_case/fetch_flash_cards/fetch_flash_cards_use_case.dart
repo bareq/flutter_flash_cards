@@ -7,6 +7,6 @@ class FetchFlashCardsUseCase {
       : _flashCardRepository = flashCardRepository;
 
   void execute() async {
-    _flashCardRepository.fetchFlashCards();
+    await _flashCardRepository.fetchFlashCards();
   }
 }
