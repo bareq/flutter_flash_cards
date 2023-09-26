@@ -9,4 +9,12 @@ extension AnswersListExtensions on List<Answer> {
     }
     return false;
   }
+
+  bool isUnknown(int flashCardId) {
+    final answerByFlashCardId = where((element) => element.id == flashCardId);
+    if (answerByFlashCardId.firstOrNull?.status == Status.unknown) {
+      return true;
+    }
+    return false;
+  }
 }

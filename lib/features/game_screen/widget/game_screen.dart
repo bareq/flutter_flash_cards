@@ -13,12 +13,20 @@ class GameScreen extends StatelessWidget {
     final flashCardViewModel = context.watch<FlashCardViewModel>();
     return Center(
         child: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        const Flexible(child: FlashCardWidget()),
-        if (flashCardViewModel.cardFlipped)
-          AnswerButtons(flashCardViewModel: flashCardViewModel)
-      ],
-    ));
+            mainAxisSize: MainAxisSize.min,
+            children: () {
+              if (flashCardViewModel.currentFlashCard != null) {
+                return flashCard(flashCardViewModel.cardFlipped);
+              } else {
+                return [const Text("Brak fiszek")];
+              }
+            }()));
+  }
+
+  List<Widget> flashCard(bool cardFlipped) {
+    return [
+      const Flexible(child: FlashCardWidget()),
+      if (cardFlipped) const AnswerButtons()
+    ];
   }
 }

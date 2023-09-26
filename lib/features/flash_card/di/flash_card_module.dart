@@ -10,20 +10,26 @@ import '../use_case/current_flash_card/service/get_current_flash_card_service.da
 class FlashCardModule extends DIModule {
   @override
   void setupModule() {
-    getIt.registerSingleton<LocalFileFlashCardsDataSource>(
-        LocalFileFlashCardsDataSource());
-    getIt.registerSingleton<FlashCardsRepository>(LocalFileFlashCardsRepository(
-        localFileFlashCardsDataSource: getIt.get()));
-    getIt.registerSingleton<GetCurrentFlashCardService>(
-        GetCurrentFlashCardService());
-    getIt.registerSingleton<FetchFlashCardsUseCase>(
-        FetchFlashCardsUseCase(flashCardRepository: getIt.get()));
-    getIt.registerSingleton<GetCurrentFlashCardUseCase>(
-        GetCurrentFlashCardUseCase(
-      flashCardsRepository: getIt.get(),
-      answersRepository: getIt.get(),
-      gameModeRepository: getIt.get(),
-      getCurrentFlashCardService: getIt.get(),
-    ));
+    getIt.registerLazySingleton<LocalFileFlashCardsDataSource>(() {
+      return LocalFileFlashCardsDataSource();
+    });
+    getIt.registerLazySingleton<FlashCardsRepository>(() {
+      return LocalFileFlashCardsRepository(
+          localFileFlashCardsDataSource: getIt.get());
+    });
+    getIt.registerLazySingleton<GetCurrentFlashCardService>(() {
+      return GetCurrentFlashCardService();
+    });
+    getIt.registerLazySingleton<FetchFlashCardsUseCase>(() {
+      return FetchFlashCardsUseCase(flashCardRepository: getIt.get());
+    });
+    getIt.registerLazySingleton<GetCurrentFlashCardUseCase>(() {
+      return GetCurrentFlashCardUseCase(
+        flashCardsRepository: getIt.get(),
+        answersRepository: getIt.get(),
+        gameModeRepository: getIt.get(),
+        getCurrentFlashCardService: getIt.get(),
+      );
+    });
   }
 }

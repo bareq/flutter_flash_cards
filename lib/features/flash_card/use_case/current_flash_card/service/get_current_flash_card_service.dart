@@ -13,11 +13,15 @@ class GetCurrentFlashCardService {
     if (answers.isEmpty) {
       return flashCards.first;
     }
-    if (gameMode.answerStatus == Status.notAnswered) {
-      return flashCards
-          .where((flashCard) => answers.isNotAnswered(flashCard.id))
-          .firstOrNull;
+    switch (gameMode.type) {
+      case GameType.newWords:
+        return flashCards
+            .where((flashCard) => answers.isNotAnswered(flashCard.id))
+            .firstOrNull;
+      case GameType.unknownWords:
+        return flashCards
+            .where((flashCard) => answers.isUnknown(flashCard.id))
+            .firstOrNull;
     }
-    return null;
   }
 }

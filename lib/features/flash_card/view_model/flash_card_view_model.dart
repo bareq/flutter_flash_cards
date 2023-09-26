@@ -1,9 +1,7 @@
 import 'package:flashcardsflutter/common/extensions/kotlin_let_extension.dart';
-import 'package:flashcardsflutter/features/answers/model/answer.dart';
 import 'package:flashcardsflutter/features/answers/use_case/fetch_answers/fetch_answers_use_case.dart';
 import 'package:flashcardsflutter/features/flash_card/model/flash_card.dart';
 import 'package:flashcardsflutter/features/flash_card/use_case/current_flash_card/get_current_card_use_case.dart';
-import 'package:flashcardsflutter/features/game_mode/model/game_mode.dart';
 import 'package:flashcardsflutter/features/game_mode/repository/game_mode_repository.dart';
 import 'package:flutter/foundation.dart';
 
@@ -15,7 +13,6 @@ class FlashCardViewModel extends ChangeNotifier {
   final FetchFlashCardsUseCase _fetchFlashCardsUseCase;
   final SaveAnswerUseCase _saveAnswerUseCase;
   final FetchAnswersUseCase _fetchAnswersUseCase;
-  final GameModeRepository _gameModeRepository;
 
   FlashCard? currentFlashCard;
   bool cardFlipped = false;
@@ -29,13 +26,10 @@ class FlashCardViewModel extends ChangeNotifier {
       : _getCurrentCardUseCase = getCurrentCardUseCase,
         _fetchFlashCardsUseCase = fetchFlashCardsUseCase,
         _saveAnswerUseCase = saveAnswerUseCase,
-        _fetchAnswersUseCase = fetchAnswersUseCase,
-        _gameModeRepository = gameModeRepository {
+        _fetchAnswersUseCase = fetchAnswersUseCase {
     observeCurrentFlashCard();
     _fetchFlashCardsUseCase.execute();
     _fetchAnswersUseCase.execute();
-    _gameModeRepository
-        .updateGameMode(GameMode(answerStatus: Status.notAnswered));
   }
 
   void flipCard() {

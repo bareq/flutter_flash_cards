@@ -38,7 +38,10 @@ class MyApp extends StatelessWidget {
                 saveAnswerUseCase: getIt.get(),
                 fetchAnswersUseCase: getIt.get(),
                 gameModeRepository: getIt.get())),
-        ChangeNotifierProvider(create: (context) => MainMenuViewModel())
+        ChangeNotifierProvider(
+            create: (context) => MainMenuViewModel(
+                updateGameModeUseCase: getIt.get(),
+                getCurrentGameModeUseCase: getIt.get()))
       ], child: const MyHomePage()),
     );
   }
@@ -63,13 +66,14 @@ class MyHomePage extends StatelessWidget {
   }
 
   Widget getSelectedWidget(int selectedMenuItem) {
+    const gameScreen = GameScreen();
     switch (selectedMenuItem) {
       case 0:
-        return const GameScreen();
+        return gameScreen;
       case 1:
-        return const GameScreen();
+        return gameScreen;
       default:
-        return const GameScreen();
+        return gameScreen;
     }
   }
 }

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../flash_card/view_model/flash_card_view_model.dart';
 
 class AnswerButtons extends StatelessWidget {
   const AnswerButtons({
     super.key,
-    required this.flashCardViewModel,
   });
-
-  final FlashCardViewModel flashCardViewModel;
 
   @override
   Widget build(BuildContext context) {
+    final flashCardViewModel = context.watch<FlashCardViewModel>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

@@ -1,7 +1,7 @@
-import 'package:flashcardsflutter/features/answers/model/answer.dart';
-
 class GameMode {
-  final Status answerStatus;
+  final GameType type;
 
-  GameMode({required this.answerStatus});
+  GameMode({required this.type});
 }
+
+enum GameType { newWords, unknownWords }

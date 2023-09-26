@@ -8,10 +8,15 @@ import '../repository/mocked/mocked_answers_repository.dart';
 class AnswersModule extends DIModule {
   @override
   void setupModule() {
-    getIt.registerSingleton<AnswersRepository>(MockedAnswersRepository());
-    getIt.registerSingleton<SaveAnswerUseCase>(
-        SaveAnswerUseCase(answerRepository: getIt.get()));
-    getIt.registerSingleton<FetchAnswersUseCase>(
-        FetchAnswersUseCase(answersRepository: getIt.get()));
+    getIt.registerLazySingleton<AnswersRepository>(() {
+      return MockedAnswersRepository();
+    });
+    getIt.registerLazySingleton<SaveAnswerUseCase>(() {
+      return SaveAnswerUseCase(
+          answerRepository: getIt.get(), flashCardRepository: getIt.get());
+    });
+    getIt.registerLazySingleton<FetchAnswersUseCase>(() {
+      return FetchAnswersUseCase(answersRepository: getIt.get());
+    });
   }
 }
