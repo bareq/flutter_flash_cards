@@ -1,0 +1,8 @@
+{
+  "appTitle": "Flutter flash cards",
+  "newWords": "Learn new words",
+  "repeatUnknown": "Repeat unknown words",
+  "iKnew": "I knew",
+  "iDidntKnow": "I didn't know",
+  "noMoreFlashCards": "No more flash cards to learn"
+}

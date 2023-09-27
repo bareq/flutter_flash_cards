@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../../flash_card/view_model/flash_card_view_model.dart';
@@ -21,7 +22,7 @@ class AnswerButtons extends StatelessWidget {
           onPressed: () {
             flashCardViewModel.wordKnownClicked();
           },
-          child: const Text('Znałem'),
+          child: Text(AppLocalizations.of(context)!.iKnew),
         ),
         const SizedBox(width: 16),
         ElevatedButton(
@@ -31,7 +32,7 @@ class AnswerButtons extends StatelessWidget {
           onPressed: () {
             flashCardViewModel.wordUnknownClicked();
           },
-          child: const Text('Nie znałem'),
+          child: Text(AppLocalizations.of(context)!.iDidntKnow),
         ),
       ],
     );

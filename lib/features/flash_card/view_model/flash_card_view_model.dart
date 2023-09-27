@@ -2,7 +2,6 @@ import 'package:flashcardsflutter/common/extensions/kotlin_let_extension.dart';
 import 'package:flashcardsflutter/features/answers/use_case/fetch_answers/fetch_answers_use_case.dart';
 import 'package:flashcardsflutter/features/flash_card/model/flash_card.dart';
 import 'package:flashcardsflutter/features/flash_card/use_case/current_flash_card/get_current_card_use_case.dart';
-import 'package:flashcardsflutter/features/game_mode/repository/game_mode_repository.dart';
 import 'package:flutter/foundation.dart';
 
 import '../../answers/use_case/save_answer/save_answer_use_case.dart';
@@ -21,8 +20,7 @@ class FlashCardViewModel extends ChangeNotifier {
       {required GetCurrentFlashCardUseCase getCurrentCardUseCase,
       required FetchFlashCardsUseCase fetchFlashCardsUseCase,
       required SaveAnswerUseCase saveAnswerUseCase,
-      required FetchAnswersUseCase fetchAnswersUseCase,
-      required GameModeRepository gameModeRepository})
+      required FetchAnswersUseCase fetchAnswersUseCase})
       : _getCurrentCardUseCase = getCurrentCardUseCase,
         _fetchFlashCardsUseCase = fetchFlashCardsUseCase,
         _saveAnswerUseCase = saveAnswerUseCase,

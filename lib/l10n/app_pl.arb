@@ -1,0 +1,8 @@
+{
+  "appTitle": "Flutter fiszki",
+  "newWords": "Nauka nowych słówek",
+  "repeatUnknown": "Powtórka nieznanych",
+  "iKnew": "Znałem!",
+  "iDidntKnow": "Nie znałem",
+  "noMoreFlashCards": "Brak fiszek do nauki"
+}

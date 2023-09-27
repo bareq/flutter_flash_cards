@@ -4,6 +4,7 @@ import 'package:flashcardsflutter/features/flash_card/di/flash_card_module.dart'
 import 'package:flashcardsflutter/features/game_mode/di/game_mode_module.dart';
 import 'package:flashcardsflutter/features/game_screen/widget/game_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
 
@@ -25,19 +26,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final getIt = GetIt.instance;
     return MaterialApp(
-      title: 'Flutter fiszki',
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       home: MultiProvider(providers: [
         ChangeNotifierProvider(
             create: (context) => FlashCardViewModel(
                 getCurrentCardUseCase: getIt.get(),
                 fetchFlashCardsUseCase: getIt.get(),
                 saveAnswerUseCase: getIt.get(),
-                fetchAnswersUseCase: getIt.get(),
-                gameModeRepository: getIt.get())),
+                fetchAnswersUseCase: getIt.get())),
         ChangeNotifierProvider(
             create: (context) => MainMenuViewModel(
                 updateGameModeUseCase: getIt.get(),
@@ -58,7 +60,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 4,
-        title: const Text('Flutter fiszki'),
+        title: Text(AppLocalizations.of(context)!.appTitle),
       ),
       drawer: const MainMenu(),
       body: selectedWidget,

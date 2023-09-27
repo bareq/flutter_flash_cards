@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import '../../flash_card/view_model/flash_card_view_model.dart';
@@ -18,7 +19,7 @@ class GameScreen extends StatelessWidget {
               if (flashCardViewModel.currentFlashCard != null) {
                 return flashCard(flashCardViewModel.cardFlipped);
               } else {
-                return [const Text("Brak fiszek")];
+                return [Text(AppLocalizations.of(context)!.noMoreFlashCards)];
               }
             }()));
   }
